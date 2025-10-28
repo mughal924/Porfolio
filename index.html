@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+:root {
+  --main-color: #0084ff;
+  --dark-color: #0044cc;
+  --bg-color: #f9f9f9;
+  --text-color: #333;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 60px 80px;
+  background: linear-gradient(135deg, var(--main-color), var(--dark-color));
+  color: white;
+}
+
+.hero-text h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: white;
+  color: var(--dark-color);
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button.outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.hero-img img {
+  width: 250px;
+  border-radius: 50%;
+  border: 4px solid white;
+}
+.about {
+  text-align: center;
+  padding: 80px 60px;
+  background-color: white;
+  color: var(--text-color);
+}
+
+.about h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: var(--dark-color);
+}
+
+.about p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* Cards */
+.about-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: var(--bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  color: var(--main-color);
+  margin-bottom: 10px;
+}
+.projects {
+  padding: 80px 60px;
+  background-color: var(--bg-color);
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: var(--dark-color);
+}
+
+.projects p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.project-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  background-color: white;
+  width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding-bottom: 20px;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 15px 0 10px;
+  color: var(--main-color);
+}
+
+.project-card p {
+  font-size: 15px;
+  padding: 0 15px;
+  color: #555;
+}
+
+.project-card button {
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.project-card button:hover {
+  background-color: var(--dark-color);
+}
+/* Contact Section */
+.contact {
+  background-color: white;
+  padding: 80px 60px;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: var(--dark-color);
+}
+
+.contact p {
+  font-size: 17px;
+  color: var(--text-color);
+  margin-bottom: 40px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 2px solid var(--main-color);
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+button[type="submit"] {
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--dark-color);
+}
+
+.contact-info {
+  max-width: 300px;
+  text-align: left;
+}
+
+.contact-info h3 {
+  margin-bottom: 15px;
+  color: var(--main-color);
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  font-size: 24px;
+  margin-right: 10px;
+  color: var(--dark-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--main-color);
+}
+.social-icons a {
+  font-size: 28px;
+  margin-right: 15px;
+  color: var(--main-color);
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+.fa-whatsapp {
+  color: #25D366;  
+}
+
+.fa-instagram {
+  color: #E1306C;  
+}
+
+.fa-linkedin {
+  color: #0077B5;  
+}
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-img img {
+    width: 200px;
+    margin-top: 20px;
+  }
+
+  .about-cards, .project-grid, .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card, .project-card, form {
+    width: 90%;
+  }
+}
+    </style>
+</head>
+<body>
+    <!-- hero section -->
+    <section class="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm Fatima Mughal</h1>
+      <p>Frontend Developer & Designer</p>
+      <a href="https://wa.me/03162866794" target="_blank">
+        <button class="fill">Hire Me</button>
+      </a>
+
+      <a href="Portfolio.zip" download>
+      <button class="outline">Download CV</button>
+      </a>
+    </div>
+
+    <div class="hero-img">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTraPpMGqTparh0D1EnP6hzYb8EcS0KqJ1Wwg&s" alt="Fatima photo">
+    </div>
+  </section>
+ <!-- end hero section -->
+  <!-- About Section -->
+<section class="about">
+  <h2>About Me</h2>
+  <p>
+    I'm Fatima mughal, a passionate frontend developer who loves designing beautiful and responsive websites. 
+    Skilled in HTML, CSS, and Currently exploring Java and AI Flow to expand my technical expertise.
+  </p>
+  <div class="about-cards">
+    <div class="card">
+      <h3>🎓 Education</h3>
+      <p>Matric (Continue--)</p>
+    </div>
+
+    <div class="card">
+      <h3>💻 Skills</h3>
+      <p>HTML, CSS, Responsive Design</p>
+    </div>
+
+    <div class="card">
+      <h3>📍 Location</h3>
+      <p>Pakistan--karachi</p>
+    </div>
+  </div>
+</section>
+<!-- about section end -->
+ <!-- Projects Section -->
+<section class="projects">
+  <h2>My Projects</h2>
+  <p>Here are some of my recent works. I love creating responsive and clean web pages.</p>
+
+  <div class="project-grid">
+    <div class="project-card">
+      <h3>Elon Musk Info</h3>
+      <p>A modern and responsive landing page made using HTML and CSS.</p>
+      <a href="file:///C:/Users/icon/Desktop/ELON%20MUSK/index.html"><button>View Project</button></a>
+    </div>
+
+    <div class="project-card">
+      <h3>Vanilla Web page</h3>
+      <p>Personal portfolio built with beautiful color gradients and animations.</p>
+      <a href="file:///C:/Users/icon/Desktop/Fatima/css/Final%20test/index.html"><button>View Project</button></a>
+    </div>
+
+    <div class="project-card">
+      <h3>Certificate Card</h3>
+      <p>Simple and elegant homepage for a business website using Flexbox.</p>
+      <a href="file:///C:/Users/icon/Desktop/Fatima/css/Certificate/index.html"><button>View Project</button></a>
+    </div>
+  </div>
+</section>
+  <!-- projects section end -->
+   <!-- Contact Section -->
+<section class="contact">
+  <h2>Contact Me</h2>
+  <p>Feel free to reach out for collaborations or just a friendly hello 👋</p>
+
+  <div class="contact-container">
+    <form onsubmit="sendMessage(event)">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <script>
+     function sendMessage(event) {
+      event.preventDefault(); 
+     alert("Thanks! Your message has been sent ✅");
+     }
+    </script>
+
+    <div class="contact-info">
+      <h3>Connect with me</h3>
+      <p>Email: fatimamughal171717@gmail.com</p>
+      <p>Phone: 03162866794</p>
+
+      <div class="social-icons">
+     <a href="https://www.instagram.com/mugh.al5902/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+     <a href="https://www.linkedin.com/in/fatima-mughal-228004378/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+     <a href="https://wa.me/03162866794" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+     </div>
+
+    </div>
+  </div>
+</section>
+ <!-- contact section end -->
+</body>
+</html>
